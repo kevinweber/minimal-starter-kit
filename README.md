@@ -5,6 +5,7 @@ Minimal build setup using Webpack, Babel (ES6-support), SCSS and ESLint.
 This starter kit is made so you can quickly write small prototypes using JavaScript and SCSS.
 
 ## Usage:
+
 1. Download kit to your computer. Run in terminal: `git clone https://github.com/kevinweber/minimal-starter-kit.git`
 2. Navigate into the root folder of the downloaded kit: `cd minimal-starter-kit/`
 3. If you don't have NPM on your machine yet, install it: https://docs.npmjs.com/getting-started/installing-node
@@ -21,6 +22,7 @@ This starter kit is made so you can quickly write small prototypes using JavaScr
 - Webpack for compiling and bundling everything.
 - Task: `npm start` bundles JS and SCSS into two separate files.
 - Task: `npm run watch` bundles JS and SCSS whenever a JS or SCSS file changes.
+- Task: `npm run production` bundles, minifies and optimizes everything.
 
 ## It does NOT include:
 
