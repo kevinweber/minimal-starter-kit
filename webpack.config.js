@@ -1,11 +1,23 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: [
-    './src/js/index.js'
-  ],
+  entry: {
+    bundle: './src/js/index.js',
+    // You can add more entry points here.
+    // Each entry point will generate a separate JS and CSS file.
+    //    external: './src/libraries/index.js',
+  },
   module: {
     rules: [{
+      // This loader might not be used right now. But let's say you want to reference an image in your CSS file, this will do the trick:
+      test: /\.(png|svg|jpg|gif)$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: 'media/[name].[ext]',
+        },
+      }],
+    }, {
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
@@ -18,7 +30,8 @@ module.exports = {
         fix: true,
       },
     }, {
-      test: /\.scss$/,
+      // The "?" allows you use both file formats: .css and .scss
+      test: /\.s?css$/,
       use: ExtractTextPlugin.extract({
         use: [{
           loader: 'css-loader'
@@ -34,9 +47,9 @@ module.exports = {
   output: {
     path: __dirname + '/dist/assets',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: 'js/[name].js'
   },
   plugins: [
-    new ExtractTextPlugin('bundle.css'),
+    new ExtractTextPlugin('css/[name].css'),
   ]
 };
