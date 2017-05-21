@@ -20,15 +20,15 @@ module.exports = {
     }, {
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
-    }, {
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'eslint-loader',
-      options: {
-        // This option makes ESLint automatically fix minor issues
-        fix: true,
-      },
+      use: [{
+        loader: 'babel-loader'
+      }, {
+        loader: 'eslint-loader',
+        options: {
+          // This option makes ESLint automatically fix minor issues
+          fix: true,
+        },
+      }]
     }, {
       // The "?" allows you use both file formats: .css and .scss
       test: /\.s?css$/,
