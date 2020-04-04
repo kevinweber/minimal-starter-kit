@@ -11,7 +11,7 @@ This starter kit is made so you can quickly write small prototypes using JavaScr
 3. If you don't have NPM on your machine yet, install it: https://docs.npmjs.com/getting-started/installing-node
 4. Run `npm install` to install dependencies.
 5. Run `npm start` to bundle JavaScript and SCSS.
-6. Open `dist/index.html` (e.g. by running `npm run open`).
+6. Open `dist/index.html` in your browser (e.g. by running `npm run open`).
 
 ## It comes with:
 
